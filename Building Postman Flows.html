@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!-- saved from url=(0058)https://samayv.com/work/casestudies/how-we-designed-flows/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Building Postman Flows</title>
+        <link rel="stylesheet" href="./Building Postman Flows_files/index.css" media="screen">
+        
+        <meta name="title" content="Building Postman Flows ">
+        
+        <meta name="description" content="My journey of starting a new team to build the next generation of no-code tools within Postman ">
+        
+        
+        <meta name="robots" content="noindex, nofollow">
+        <meta name="robots" content="noimageindex">
+        
+        <meta name="keywords" content="Shrey, Product, designer,posts,caseStudy,Flows,Postman,">
+        <meta name="language" content="English">
+        <meta name="author" content="Shrey">
+        
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+    <div class="head">
+        <h4>
+            
+        </h4>
+    </div>
+
+</div>
+            <div class="content">
+                <div class="meta">
+    <h1>Building Postman Flows</h1>
+    
+    
+
+
+    
+
+
+    
+        
+        <a href="https://samayv.com/tags/Flows/" class="tag">Flows</a>
+    
+
+
+    
+        
+        <a href="https://samayv.com/tags/Postman/" class="tag">Postman</a>
+    
+
+
+</div>
+
+
+<p><img src="./Building Postman Flows_files/flow-demo.gif" alt="awesome_gif.gif"></p>
+<p><em>Postman Flows</em> is a visual tool for creating API workflows. It's perfect for users who prefer not to dive deep into code or who lack the technical know-how. With Flows, you can easily connect API requests, handle data, and create real-world workflows using visual interfaces.</p>
+<p>What is an API, you ask?Just as we use a Graphical User Interface (GUI) to talk to software applications, software applications use Application Programming Interface (API) to talk to other Apps. Flows helps you visually define how these Apps should talk to each other to build a new app.</p>
+<p>Here's an example of how different apps can be combined to create a complete e-commerce solution. You can use Google's Authentication app to secure user accounts and connect it with Shopify's carting app to create a seamless shopping experience. You can also add Stripe's payment processing app to handle transactions securely. By integrating these different apps, you can create an bare-bones e-commerce app without writing any “code”.</p>
+<h1>Origin story</h1>
+<p>Around the end of 2021, some smart folks in the runtime team started tinkering with the idea of a new programming language meant to act as a <em>glue</em> between two APIs. This would help create business logic for API-first applications faster.</p>
+<blockquote>
+<p><em>Started of with a team of two, today we are 8 member strong</em></p>
+</blockquote>
+<p>Soon we created a new team, <em><strong>Labs</strong></em>, that worked exclusively on 0 to 1 projects (or <a href="https://www.youtube.com/watch?v=s1mhG6AtwiI">Loonshots</a>) inside of Postman. Flows became the first project in Labs. We <strong><em>started with a team of 2</em></strong>, an engineer and a designer (yours truly). In the initial few months, we knew we wanted to create a visual language that looked like flow diagrams and had data flowing through it. <strong>Today the team is 8 members strong</strong>, 2 designers &amp; 6 engineers.</p>
+<h1>How we designed Flows</h1>
+<h2>1. Initial research</h2>
+<p>When we started out, we knew we wanted to create a visual system to connect two APIs. So, we spoke with users who were already building API workflows in code to draw a diagram or a flow chart to explain how their systems work.</p>
+<p>This gave us great insight into how people intuitively depict logic visually. During these sessions, we observed their micro-decisions on how to show data, construct loops, and evaluate data. We used this information to inform our decisions when starting to design the building blocks of Flows.</p>
+<p><img src="./Building Postman Flows_files/diagram.png" alt="Postman Flow diagram showing looping GUI for meal planning"></p>
+<p>We also created and maintained a live list of use cases from our interviews. This informed our decisions throughout and helped us align ourselves to the right direction in the long term.</p>
+<h2>2. Foundational Principles</h2>
+<p>Before even creating wireframes we sat down as a team and decided on a few principles that could guide our design language and micro decisions that are aligned to the vision. We decided that we want to create an interface that is:</p>
+<ol>
+<li>
+<p><strong>Learnable</strong> - Not everything can be oversimplified and that’s okay. We should optimise for <em>discoverability</em> and <em>understandability</em>.</p>
+</li>
+<li>
+<p><strong>Composable</strong> - Flows should introduce components that can be combined together in endless combinations to get simple as well as complex outcomes.</p>
+</li>
+<li>
+<p><strong>Invisible</strong> - The main task of flows is to get out of the user's way. We understand that the users are here to craft their master plans, so every new thing we add is a potential pebble on the highway.</p>
+</li>
+</ol>
+<p>These principles have remained with us since the first day and guided our discussions around smaller features as well as longer term plans.</p>
+<h2>3.Personifying physical objects in the interface</h2>
+<p>Since flow is a <strong><em>visual</em></strong> way to program we wanted stay close to our interactions with the real world. This meant really diving deep into the physics and personifying interface components as physical objects to decide their behaviour.</p>
+<p><img src="./Building Postman Flows_files/personification_MID.gif" alt="personifying physical objects in the interface"></p>
+<h2>4. Designing for development</h2>
+<p>One year into building flows, I noticed some inefficiencies in my design process. Frequent redesigns were necessary due to missed edge cases, and developers had to come back to me with questions on how to implement certain designs.</p>
+<p>To address these issues, I sat down with the team to analyze the incidents and develop a system for designing that benefits everyone. We agreed that we need a system that allows for faster feedback loops in the early stages of designing and reduces the number of iterations needed.</p>
+<p><img src="./Building Postman Flows_files/lifecycle.png" alt="Flow&#39;s product lifecycle"></p>
+<p>We looked at the current design process and saw that even though I was creating components, my deliverables were mostly “Screens”. But when developing these designs we were using component based frameworks like React. So we came up with a system of designing that focused on every component instead of entire screens.</p>
+<p>All designs would now be component specs. And each component would have 3 elements:</p>
+<ol>
+<li><strong>States</strong> - These are the various forms in which a single component can exist in</li>
+<li><strong>Behaviours</strong> - What interaction or force changes the component’s state from one to another</li>
+<li><strong>Changes</strong> - a sort of archive that lists the various changes in the component over time. This helps archive decisions and also point out exactly what is to be worked on</li>
+</ol>
+<p><img src="./Building Postman Flows_files/SBC.png" alt="A file with States behaviours and changes defined"></p>
+<p>Implementing this in our team really accelerated our development process and since then many other teams in postman have also started using this system</p>
+<h2>5. <strong>Deciding slow, shipping fast</strong></h2>
+<p>As Flows began as an experiment, we tried to not design opinionated features but <em>experiments</em> that would validate our hypotheses. We started shipping MVPs, which meant we did not ship fully developed features, but rather the minimum functionality required to validate our hypotheses.</p>
+<p>Once an MVP was shipped, we collected feedback from users and iterated our approach multiple times before settling on the final solution.</p>
+<h2>6. <strong>Building feedback funnels</strong></h2>
+<p>To ensure that we stay close to our users and don’t build in a silo, we had to build multiple avenues to get feedback.</p>
+<ol>
+<li>
+<p><strong>Internal feedback</strong></p>
+<p>To get early feedback on ideas, we developed a strong <a href="https://en.wikipedia.org/wiki/Request_for_Comments">RFC (Request for Comments)</a> writing culture. Anyone from the team with an idea, could write it down in a document and share it with the entire company to get comments on. This helped us get feedback and also ideate, since writing is thinking.</p>
+</li>
+<li>
+<p><strong>Github discussions (400+ discussion threads</strong>) - Github is a great source of feedback for postman. We wanted to tap into it as much as possible so we added a direct link to the Flows repository’s <a href="https://github.com/postmanlabs/postman-flows/discussions">Discussion page</a>. This proved to be great because we were able to engage in direct conversations with users and help them out in the initial days.
+<img src="./Building Postman Flows_files/feedback.png" alt="Feedback button on header"></p>
+</li>
+<li>
+<p><strong>Postman flow champions</strong> - We created an external channel on Slack where we would invite users who were heavily involved in Flows. Users like <a href="https://www.youtube.com/watch?v=bQAn-WfrDTw">Beth Marshall</a> that were talking about flows to their audience as well</p>
+</li>
+<li>
+<p><strong>User video interactions</strong> - We also got into face to face discussions with our users. This helps us especially with understanding how enterprises want to use Flows with their teams.</p>
+</li>
+<li>
+<p><strong>Data</strong> - Lastly we collected a LOT of data on how users were using Flows from day one. Initially the scale was too small to depend on quantitative data but as we moved forward we could really assess our early decisions and pivot wherever necessary</p>
+</li>
+</ol>
+<p>Overall, the journey of building Flows is really the journey of me growing into a well rounded designer. I have worn multiple hats while working on flows and have understood what having deep empathy for your users and team members means. With the combination of all of these efforts, Postman Flows is close to becoming a powerful tool that helps knowledge workers realise the potential of APIs.</p>
+
+            </div>
+            <div class="footer">
+                © Shrey
+</div>
+        </div>
+    
+</body></html>
